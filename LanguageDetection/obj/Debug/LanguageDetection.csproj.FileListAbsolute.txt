@@ -1,0 +1,6 @@
+c:\users\admin\documents\visual studio 2015\Projects\LanguageDetection\LanguageDetection\bin\Debug\LanguageDetection.exe.config
+c:\users\admin\documents\visual studio 2015\Projects\LanguageDetection\LanguageDetection\bin\Debug\LanguageDetection.exe
+c:\users\admin\documents\visual studio 2015\Projects\LanguageDetection\LanguageDetection\bin\Debug\LanguageDetection.pdb
+c:\users\admin\documents\visual studio 2015\Projects\LanguageDetection\LanguageDetection\obj\Debug\LanguageDetection.csprojResolveAssemblyReference.cache
+c:\users\admin\documents\visual studio 2015\Projects\LanguageDetection\LanguageDetection\obj\Debug\LanguageDetection.exe
+c:\users\admin\documents\visual studio 2015\Projects\LanguageDetection\LanguageDetection\obj\Debug\LanguageDetection.pdb
