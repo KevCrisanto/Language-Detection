@@ -10,21 +10,49 @@ namespace LanguageDetection
         static void Main(string[] args)
         {
             const string knownLanguagesFile = @"known_languages.txt";
-
-            if (args.Length == 2)
+            bool continueDecision;
+            do
             {
-                Learn(args[0], args[1], knownLanguagesFile);
+                var decision = string.Empty;
+                try
+                {
+                    Console.WriteLine(@"The program can detect a language, learn a new language, or simply test the current supported languages.\n ");
+                    Console.WriteLine(@"- To detect a language just type the path to the file with the text. Ex: C:\text.txt");
+                    Console.WriteLine(@"- To learn a language type the language code and the path to the file with the sample text. Ex: pl C:\polish.txt");
+                    Console.WriteLine("- Press Enter if you just want to test the program (it may take several seconds)");
+                    string choice = (Console.ReadLine() ?? string.Empty);
 
-            }
-            else if (args.Length == 1)
-            {
-                Detect(args[0], knownLanguagesFile);
-            }
-            else
-            {
-                Test();
-            }
+                    if (choice != string.Empty)
+                    {
+                        var choices = choice.Split(' ');
 
+                        if (choices.Length == 2)
+                        {
+                            Learn(choices[0], choices[1], knownLanguagesFile);
+                        }
+                        else if (choices.Length == 1)
+                        {
+                            Detect(choices[0], knownLanguagesFile);
+                        }
+                    }
+                    else
+                    {
+                        Test();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                do
+                {
+                    Console.Write("Would you like to run the program again?(Y/N): ");
+                    decision = (Console.ReadLine() ?? string.Empty);
+                } while (!decision.Equals("Y", StringComparison.OrdinalIgnoreCase) &&
+                    !decision.Equals("N", StringComparison.OrdinalIgnoreCase));
+                continueDecision = decision.Equals("Y", StringComparison.OrdinalIgnoreCase);
+
+            } while (continueDecision);
             Console.ReadKey();
         }
 
