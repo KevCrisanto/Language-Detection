@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace LanguageDetection.Workers
 {
@@ -14,11 +15,15 @@ namespace LanguageDetection.Workers
             _availableLanguages = availableLanguages;
         }
 
-        public string Detect(string path, out int score)
+        public string Detect(string textOrPath, string choice)
         {
-            score = 0;
+            //score = 0;
+            var text = String.Empty;
 
-            var text = Helper.GetFileContents(path); //read file
+            if (choice.Equals("F", StringComparison.OrdinalIgnoreCase))
+                text = Helper.GetFileContents(textOrPath); //read file
+            else
+                text = textOrPath;
 
             var ngramBuilder = new NgramBuilder(MaxLength, true);
 
@@ -70,7 +75,7 @@ namespace LanguageDetection.Workers
                 }
             }
 
-            score = probability;
+            //score = probability;
 
             return lowestScoringLanguage;
         }
