@@ -5,9 +5,12 @@ As of now, it can detect English, Spanish, Dutch, German, Russian and Bulgarian,
 ## Features
 ### Language Detection
 You can copy and paste some text into the terminal to detect the language.
-![string](photos/screenshot:gifs/string.gif)
+
+![string](photos/screenshots/string.gif)
 
 Or you can enter the path to a file with the text to detect.
+![file](photos/screenshots/file.gif)
 
 ### Language Learning
 You will need a file with a large sample of text in the language that you want the program to learn. It is important that the file is saved with Unicode encoding.
+![learn](photos/screenshots/learn.gif)

@@ -51,7 +51,7 @@ namespace LanguageDetection
 
                     else
                     {
-                        Console.Write("Enter the code of the language you want the program to learn. Ex: for English a good code would be 'en'");
+                        Console.Write("Enter the code of the language you want the program to learn. Ex: for English a good code would be 'en': ");
                         var languageCode = Console.ReadLine();
                         Console.Write(@"Enter the path to the file with the data to learn the language. Ex: C:\Desktop\english.txt :");
                         var path = Console.ReadLine();
